@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap');
+body{
+    font-family: 'Raleway', sans-serif;
+    /* background: url(img/sunny.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #e0e0e0;
+    color: #707070;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+max-width: 400px;
+min-width: 400px;
+}
+
+.title{
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.form-rounded{
+    border-radius: 2em;
+}
+
+.back-card{
+    border-radius: 2em !important;
+}
+
+.city-name{
+    position: absolute;
+    width: 100%;
+}
+
+.city-name p{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.city-name span{
+    font-weight: 500;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    top: -50px;
+}
+
+.card-mid{
+    line-height: 0.5;
+}
+
+.temp span{
+    font-weight: 200;
+    font-size: 5em;
+    letter-spacing: -5px;
+    white-space: nowrap;
+}
+
+.condition{
+line-height: 1em;
+font-weight: 700;
+font-size: 18px;
+text-transform: capitalize;
+}
+
+.high::before{
+    content: '';
+    background: url('img/up.png') no-repeat;
+    width: 20px;
+    height: 22px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.high{
+    font-size: 20px;
+}
+
+.low::before{
+    content: '';
+    background: url('img/down.png') no-repeat;
+    width: 20px;
+    height: 22px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.low{
+    font-size: 20px;
+}
+
+.icon-container{
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background: #646464;
+}
+
+.icon-container img{
+    margin: auto;
+}
+
+.card-bottom{
+    line-height: 0.8;
+}
+
+.card-bottom span{
+    font-size: 16px;
+}
+
+.card-bottom p{
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: -2px;
+}

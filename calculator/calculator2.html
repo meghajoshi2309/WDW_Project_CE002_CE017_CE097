@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS Calculator</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.main{
+			width: 100%;
+			height: 100vh;
+			background-color: #11a3a4;
+			position: relative;
+		}
+		.content{
+			width: 50%;
+			padding: 5%;
+			transform: translate(50%, 40%);
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.8);
+			color: white;
+			border-radius: 10px;
+			box-shadow: 5px 10px 28px #333;
+		}
+		.left{
+			text-align: left;
+			font-size: 30px;
+			font-weight: 800;
+			color: #11a3a4;
+		}
+		.left .vl{
+			border-left: 6px solid #11a3a4;
+  			height: 70px;
+  			padding-left: 10px;
+		}
+		.right{
+			text-align: right;
+			margin-top: -10%;
+			position: relative;
+		}
+		.box .inputBox{
+			position: relative;
+		}
+		.box .inputBox input{
+			padding: 10px;
+			font-size: 15px;
+			color: #fff;
+			margin-bottom: 30px;
+			border: none;
+			border-bottom: 1px solid #fff;
+			outline: none;
+			background: transparent;
+		}
+		.box .inputBox input:focus ~ label,
+		.box .inputBox input:valid ~ label{
+			top: -25px;
+			color: #11a3a4;
+			font-size: 18px;
+		}
+		.box .inputBox label{
+			position: absolute;
+			top: 0;
+			left: 68%;
+			padding: 10px 0;
+			font-size: 15px;
+			color: #fff;
+			transition: 0.5s;
+		}
+		.box select{
+			width: 33%;
+			background: transparent;
+			border: none;
+			outline: none;
+			color: #000;
+			background: #fff;
+			padding: 8px 16px;
+			border-radius: 1px;
+			transform: translate(1%, -10%);
+		}
+		.box input[type="button"]{
+			background: transparent;
+			border: none;
+			outline: none;
+			color: #fff;
+			background: #11a3a4;
+			padding: 8px 16px;
+			border-radius: 5px;
+			transform: translate(-60%, 50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="content">
+			<div class="left"><div class="vl">JS<br>CALCULATOR</div></div>
+			
+			<div class="right">
+				<div class="box">
+					<form method="POST">
+						<div class="inputBox">
+						<input type="number" id="num1" autocomplete="off" required>
+						<label>Enter Number</label>
+						</div>
+						<div class="inputBox">
+						<input type="number" id="num2" autocomplete="off" required>
+						<label>Enter Number</label>
+						</div>
+						<div class="select">
+							<select name="operation" id="operations">
+								<option value="none"  selected>Select_Operator</option>
+								<option value="add">Add(+)</option>
+								<option value="sub">Sub(-)</option>
+								<option value="mul">Mul(*)</option>
+								<option value="div">Div(/)</option>
+							</select>
+						</div>
+						<input type="button" name="submit" value="Calculate" onclick="calculate()">
+					</form>
+				</div>
+			</div>
+			<div class="showdata">
+				<h2 style="margin-top:40px; color:crimson" id="display"></h2>
+			</div>
+		</div>
+	</div>
+	<script>
+		function calculate(){
+			let num1 = document.getElementById('num1').value;
+			let num2 = document.getElementById('num2').value;
+
+			var operation = document.getElementById('operations').value;
+
+			if (operation == 'add') {
+				document.getElementById('display').innerHTML =parseInt(num1) + parseInt(num2);			
+			}else if(operation == 'sub'){
+				document.getElementById('display').innerHTML = parseInt(num1) - parseInt(num2);
+			}else if(operation == 'mul'){
+				document.getElementById('display').innerHTML =parseInt(num1) * parseInt(num2);
+			}else if(operation == 'div'){
+				document.getElementById('display').innerHTML =parseInt(num1) / parseInt(num2);
+			}else{
+				document.getElementById('display').innerHTML = 'Please select any one of them operations.';
+			}
+
+
+			
+		}
+	</script>
+</body>
+</html>

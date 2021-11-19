@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Maths Matser</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    table{
+      font-size: 20px;
+      width: 80%;
+    }
+    td{
+      width: 20%;
+    }
+    .btn{
+      margin-top: 50px; 
+    }
+    #text{
+      font-family: "Sofia", sans-serif;
+      font-size: 30px;
+      text-shadow: 3px 3px 3px #ababab;
+    }
+    #text1{
+      font-family: "Sofia", sans-serif;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1 style="background: rgb(1, 70, 160); color: blanchedalmond; height: 100px; text-align: center; margin-top: 0px; padding-top: 50px;">MATHS MASTER</h1>
+
+  <p id="text" style="text-align: center; font-size: large; display: none; margin-top: 100px; ">
+    <span class="fa fa-star " id="star1" style="font-size: 35px ;"></span>
+    <span class="fa fa-star" id="star2" style="font-size: 75px;"></span>
+    <span class="fa fa-star" id="star3" style="font-size: 35px;"></span>
+    <p id="text1" style="font-size: 25px; text-align: center; margin-top: 10px;"></p>
+
+  </p>
+  <div id="links" class="text-center" style="display: none;" >  
+    <a href="medium.html" class="btn btn-success">Next Level</a>
+    <a href="easy.html" class="btn btn-danger">Retry</a>
+    <a href="mathsgame.html" class="btn btn-primary">Home</a>
+  </div>
+  
+    <div class="container text-center" id="main" style="display: block;">
+      <table style="margin-top: 50px; margin-left: 50px; width: 80%; height: 230px;">
+        <tr>
+          <td><input type="number" name="e11" id="e11" placeholder="type correct number"></td>
+          <td>+</td><td>9</td><td style="background-color: rgb(29, 116, 230); color: blanchedalmond;  border-radius: 50px 20px; ">11</td>
+        </tr>
+        <tr>
+          <td>*</td><td></td><td>*</td><td></td>
+        </tr>
+        <tr>
+          <td><input type="number" name="e21" id="e21" placeholder="type correct number"></td><td>-</td><td>
+            <input type="number" name="e22" id="e22" placeholder="type correct number"></td>
+          <td style="background-color: rgb(29, 116, 230); color: blanchedalmond;  border-radius: 50px 20px; ">2</td>
+        </tr>
+        <tr>
+          <td style="background-color: rgb(29, 116, 230); color: blanchedalmond;  border-radius: 50px 20px; ">14</td><td></td>
+          <td style="background-color: rgb(29, 116, 230); color: blanchedalmond;  border-radius: 50px 20px; ">45</td><td></td>
+        </tr>
+      </table>
+     
+    </div>
+    
+    <div class="d-grid" style="margin-left: 50px; margin-right: 50px;" id="submitbtn">
+      <button  type="button" onclick="result()" class="btn btn-success btn-block btn-lg"   >Submit</button>
+    </div>
+   
+      
+      
+
+    <script>
+      let mark = 0;
+      var e11 = document.getElementById('e11');
+
+          e11.addEventListener('keydown', (e) => {
+            if(e.key == 2){ mark++;}
+        });
+
+        var e21 = document.getElementById('e21');
+
+          e21.addEventListener('keydown', (e) => {
+            if(e.key == 7){ mark++;}
+        });
+
+        var e22 = document.getElementById('e22');
+
+          e22.addEventListener('keydown', (e) => {
+            if(e.key == 5){ mark++;}
+        });
+
+
+      function result(){
+        document.getElementById("text").style.display = "block";
+      if(mark == 3){
+        document.getElementById("star1").style.color = "orange";
+        document.getElementById("star2").style.color = "orange";
+        document.getElementById("star3").style.color = "orange";
+        document.getElementById("text1").textContent = "super duper !!";
+      }
+      else if(mark == 2){
+        document.getElementById("star1").style.color = "orange";
+        document.getElementById("star2").style.color = "orange";
+        document.getElementById("text1").textContent = "nice work !!";
+      }
+      else if(mark == 1){
+        document.getElementById("star1").style.color = "orange";
+        document.getElementById("text1").textContent = "good try !!";
+
+      }
+      else{
+        document.getElementById("text").style.color = "black";
+        document.getElementById("text1").textContent = "retry !!";
+      }
+      document.getElementById("main").style.display = "none";
+      document.getElementById("submitbtn").style.display = "none";
+      document.getElementById("links").style.display = "block";
+      
+      }
+
+      
+    
+    </script>
+
+</body>
+</html>
